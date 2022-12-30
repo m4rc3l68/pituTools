@@ -1,14 +1,14 @@
 import app from './app'
 import database from './database'
 
-database.sync({ force: true })
+database.sync()
 console.log('Database running at 3306')
 
 const server = app.listen(3000, () => {
-  console.log('Servidor rodando...')
+  console.log('Server running at 3000')
 })
 
 process.on('SIGINT', () => {
   server.close()
-  console.log('APP Finalizado!')
+  console.log('APP Finishing!')
 })
