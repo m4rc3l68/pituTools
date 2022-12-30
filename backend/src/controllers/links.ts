@@ -40,8 +40,6 @@ function hitLink(req: Request, res: Response) {
     links[index].hits!++
     res.json(links[index])
   }
-
-  res.send('hitLink')
 }
 
 export default {
