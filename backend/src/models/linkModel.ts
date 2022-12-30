@@ -8,7 +8,7 @@ export interface ILinkModel
   extends Model<Link, ILinkCreationAttributes>,
     Link {}
 
-const LinkModel = database.define('link', {
+const LinkModel = database.define<ILinkModel>('link', {
   id: {
     type: Sequelize.INTEGER.UNSIGNED,
     primaryKey: true,
@@ -24,6 +24,7 @@ const LinkModel = database.define('link', {
   code: {
     type: Sequelize.STRING(20),
     unique: true,
+    allowNull: false,
   },
 
   hits: {
