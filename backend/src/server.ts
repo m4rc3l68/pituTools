@@ -4,8 +4,8 @@ import database from './database'
 database.sync()
 console.log('Database running at 3306')
 
-const server = app.listen(3000, () => {
-  console.log('Server running at 3000')
+const server = app.listen(3001, () => {
+  console.log('Server running at 3001')
 })
 
 process.on('SIGINT', () => {

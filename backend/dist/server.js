@@ -7,8 +7,8 @@ const app_1 = __importDefault(require("./app"));
 const database_1 = __importDefault(require("./database"));
 database_1.default.sync();
 console.log('Database running at 3306');
-const server = app_1.default.listen(3000, () => {
-    console.log('Server running at 3000');
+const server = app_1.default.listen(3001, () => {
+    console.log('Server running at 3001');
 });
 process.on('SIGINT', () => {
     server.close();
