@@ -1,23 +1,5 @@
-import logo from './logo.svg'
-import './App.css'
-
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Olá Mundo!</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          A Caminho do Sucesso!
-        </a>
-      </header>
-    </div>
-  )
+  return <div>PituTools</div>
 }
 
 export default App
