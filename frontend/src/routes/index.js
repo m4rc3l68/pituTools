@@ -10,6 +10,13 @@ import RedirectPage from '../pages/RedirectPage'
 import StatsPage from '../pages/StatsPage'
 import NotFoudPage from '../pages/NotFoudPage'
 
+/*
+  A partir da v6 do (react-router-dom) ficou assim:
+  Routes no lugar de Switch.
+  (exato) desaparece.
+  (element) no lugar de (component).
+  Uso de <tag /> no (element).
+*/
 function MyRoutes() {
   return (
     <BrowserRouter>
