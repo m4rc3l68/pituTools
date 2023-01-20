@@ -6,7 +6,7 @@ class HomePage extends React.Component {
   }
 
   render() {
-    return <p>PituTools</p>
+    return <p>PitúTools</p>
   }
 }
 
