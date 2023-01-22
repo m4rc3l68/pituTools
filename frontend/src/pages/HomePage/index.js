@@ -11,7 +11,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header>Seu novo encurtador de URL. :)</Header>
         <FontAwesomeIcon icon="check-square" /> PitúTools
       </Container>
     )

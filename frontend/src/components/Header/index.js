@@ -1,7 +1,18 @@
 import React from 'react'
+import { Logo, HeaderContainer } from './styles'
 
-function Header() {
-  return <p>Header</p>
+import Icone from '../Header/assets/Copilot.png'
+
+function Header(props) {
+  return (
+    <>
+      <HeaderContainer>
+        <Logo src={Icone} alt="PituTools - Encurtador de URL" />
+        <h1>PituTools</h1>
+        <p>{props.children}</p>
+      </HeaderContainer>
+    </>
+  )
 }
 
 export default Header
