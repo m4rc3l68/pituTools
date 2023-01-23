@@ -1,5 +1,5 @@
 import React from 'react'
-import { Logo, HeaderContainer } from './style'
+import { Logo, HeaderContainer } from './styles'
 
 import Icone from '../../assets/Copilot.png'
 
