@@ -27,11 +27,9 @@ class HomePage extends React.Component {
                 defaultValue=""
                 onChange={(e) => this.setState({ url: e.target.value })}
               />
-              <InputGroup.Append>
-                <Button variant="primary" type="submit">
-                  Encurtar
-                </Button>
-              </InputGroup.Append>
+              <Button variant="primary" type="submit">
+                Encurtar
+              </Button>
             </InputGroup>
           </Form>
         </ContentContainer>
