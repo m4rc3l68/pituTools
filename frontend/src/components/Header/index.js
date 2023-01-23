@@ -1,7 +1,7 @@
 import React from 'react'
-import { Logo, HeaderContainer } from './styles'
+import { Logo, HeaderContainer } from './style'
 
-import Icone from '../Header/assets/Copilot.png'
+import Icone from '../../assets/Copilot.png'
 
 function Header(props) {
   return (
