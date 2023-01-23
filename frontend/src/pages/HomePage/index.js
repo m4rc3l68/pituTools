@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../../components/Header'
 import { Container, InputGroup, FormControl, Button } from 'react-bootstrap'
 import { ContentContainer, Form } from './styles'
+import ShortenerService from '../../services/shortenerService'
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -10,8 +11,35 @@ class HomePage extends React.Component {
     this.state = {
       isLoading: false,
       url: '',
-      shortenedURL: '',
+      code: '',
       errorMenssage: '',
+    }
+  }
+
+  handleSubmit = async (event) => {
+    event.preventDefault()
+
+    const { url } = this.state
+
+    this.setState({ isLoading: true, errorMenssage: '' })
+
+    if (!url) {
+      this.setState({
+        isLoading: false,
+        errorMenssage: 'Informe uma url para encurtar!',
+      })
+    } else {
+      try {
+        const service = new ShortenerService()
+        const result = await service.generate({ url })
+
+        this.setState({ isLoading: false, code: result.code })
+      } catch (error) {
+        this.setState({
+          isLoading: false,
+          errorMenssage: 'Ops, Ocorreu um ao tentar encurtar a url',
+        })
+      }
     }
   }
 
@@ -20,7 +48,7 @@ class HomePage extends React.Component {
       <Container>
         <Header>Seu novo encurtador de URL. :)</Header>
         <ContentContainer>
-          <Form>
+          <Form onSubmit={Button}>
             <InputGroup>
               <FormControl
                 placeholder="Digite a url para encurtar"
