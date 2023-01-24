@@ -1,6 +1,13 @@
 import React from 'react'
 import Header from '../../components/Header'
-import { Container, InputGroup, FormControl, Button } from 'react-bootstrap'
+import {
+  Container,
+  InputGroup,
+  FormControl,
+  Button,
+  Alert,
+  Spinner,
+} from 'react-bootstrap'
 import { ContentContainer, Form } from './styles'
 import ShortenerService from '../../services/shortenerService'
 
@@ -37,28 +44,65 @@ class HomePage extends React.Component {
       } catch (error) {
         this.setState({
           isLoading: false,
-          errorMenssage: 'Ops, Ocorreu um ao tentar encurtar a url',
+          errorMenssage: 'Ops..., Ocorreu um erro ao tentar encurtar a url',
         })
       }
     }
   }
 
+  copyToClipboard = () => {
+    const element = this.inputURL
+    element.select()
+    document.execCommand('copy')
+  }
+
   render() {
+    const { isLoading, errorMenssage, code } = this.state
+
     return (
       <Container>
         <Header>Seu novo encurtador de URL. :)</Header>
         <ContentContainer>
-          <Form onSubmit={Button}>
-            <InputGroup>
+          <Form onSubmit={this.handleSubmit}>
+            <InputGroup className="mb-3">
               <FormControl
                 placeholder="Digite a url para encurtar"
                 defaultValue=""
                 onChange={(e) => this.setState({ url: e.target.value })}
               />
+
               <Button variant="primary" type="submit">
                 Encurtar
               </Button>
             </InputGroup>
+
+            {isLoading ? (
+              <Spinner animation="border" />
+            ) : (
+              code && (
+                <>
+                  <InputGroup className="mb-3">
+                    <FormControl
+                      autoFocus={true}
+                      defaultValue={`https://pituTools.tk/${code}`}
+                      ref={(input) => (this.inputURL = input)}
+                    />
+                    <Button
+                      variant="outline-secondary"
+                      onClick={() => copyToClipboard()}
+                    >
+                      Copiar
+                    </Button>
+                  </InputGroup>
+                  <p>
+                    Para acompanhar as estatísticas, acesse:
+                    https://pituTools.tk/{code}
+                  </p>
+                </>
+              )
+            )}
+
+            {errorMenssage && <Alert variant="danger">{errorMenssage}</Alert>}
           </Form>
         </ContentContainer>
       </Container>
