@@ -1,7 +1,7 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import React from 'react'
 import Header from '../../components/Header'
+// import copy from 'react-copy-to-clipboard'
 import {
   Container,
   InputGroup,
@@ -56,7 +56,7 @@ class HomePage extends React.Component {
     const element = this.inputURL
     element.select()
 
-    alert('Copiado com sucesso!')
+    document.execCommand('copy')
   }
 
   render() {
