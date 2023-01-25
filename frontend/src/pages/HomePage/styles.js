@@ -4,7 +4,6 @@ export const ContentContainer = styled.div`
   display: flex;
   justify-content: center !important;
   margin-bottom: 2rem;
-  background: #ccc;
 `
 
 export const Form = styled.form`

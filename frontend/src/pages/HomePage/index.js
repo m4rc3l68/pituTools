@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import React from 'react'
 import Header from '../../components/Header'
 import {
@@ -53,7 +55,8 @@ class HomePage extends React.Component {
   copyToClipboard = () => {
     const element = this.inputURL
     element.select()
-    document.execCommand('copy')
+
+    alert('Copiado com sucesso!')
   }
 
   render() {
@@ -75,7 +78,6 @@ class HomePage extends React.Component {
                 Encurtar
               </Button>
             </InputGroup>
-
             {isLoading ? (
               <Spinner animation="border" />
             ) : (
@@ -87,8 +89,9 @@ class HomePage extends React.Component {
                       defaultValue={`https://pituTools.tk/${code}`}
                       ref={(input) => (this.inputURL = input)}
                     />
+
                     <Button
-                      variant="outline-secondary"
+                      variant="outline-success"
                       onClick={() => copyToClipboard()}
                     >
                       Copiar
