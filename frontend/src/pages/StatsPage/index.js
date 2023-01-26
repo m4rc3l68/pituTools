@@ -15,7 +15,7 @@ class StatsPage extends React.Component {
     this.state = {
       isLoading: false,
       shortenedURL: {},
-      errorMessage: 'Error',
+      errorMessage: '',
     }
   }
 
@@ -37,7 +37,29 @@ class StatsPage extends React.Component {
             </a>
           </StatsContainer>
         ) : (
-          <p>Resultado</p>
+          <StatsContainer className="text-center">
+            <p>
+              <b>https://pituTools.tk/{shortenedURL.code}</b>
+            </p>
+            <p>
+              Redireciona para:
+              <br />
+              {shortenedURL.url}
+            </p>
+            <StatsRow>
+              <StatsBox>
+                <b>{shortenedURL.hits}</b>
+                <StatsBoxTitle>Visitas</StatsBoxTitle>
+              </StatsBox>
+              <StatsBox>
+                <b>{shortenedURL.relativeDate}</b>
+                <StatsBoxTitle>Última visita</StatsBoxTitle>
+              </StatsBox>
+            </StatsRow>
+            <a className="btn btn-primary" href="/">
+              Encurtar nova URL
+            </a>
+          </StatsContainer>
         )}
       </Container>
     )
