@@ -70,7 +70,6 @@ class StatsPage extends React.Component {
             </p>
             <p>
               Redireciona para:
-              <br />
               {shortenedURL.url}
             </p>
             <StatsRow>
