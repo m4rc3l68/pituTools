@@ -22,7 +22,7 @@ class StatsPage extends React.Component {
   }
 
   async componentDidMount() {
-    const { code } = this.props
+    const { code } = this.props.match.params
 
     try {
       const service = new ShortenerService()
