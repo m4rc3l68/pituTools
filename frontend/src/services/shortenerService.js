@@ -2,7 +2,7 @@ import baseAPI from './api'
 
 class ShortenerService {
   constructor() {
-    this.api = baseAPI('http://localhost:3001')
+    this.api = baseAPI('http://localhost:3001/')
   }
 
   async getLink(code) {
@@ -10,6 +10,7 @@ class ShortenerService {
 
     return result.data
   }
+
   async getStats(code) {
     const result = await this.api.get(`links/${code}/stats`)
 

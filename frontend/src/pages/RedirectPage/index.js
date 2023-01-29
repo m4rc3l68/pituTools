@@ -27,7 +27,7 @@ class RedirectPage extends React.Component {
     } catch (error) {
       this.setState({
         isLoading: false,
-        errorMenssage: 'Ops! A url solicitada não existe!',
+        errorMenssage: 'Ops! A url solicitada não existe!!!!!',
       })
     }
   }
@@ -39,7 +39,7 @@ class RedirectPage extends React.Component {
       <Container>
         {errorMessage ? (
           <>
-            <Header>Seu novo encurtador de url.</Header>
+            <Header>Seu novo encurtador de url!</Header>
 
             <StatsContainer className="text-center">
               <FontAwesomeIcon

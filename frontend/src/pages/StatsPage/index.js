@@ -1,12 +1,9 @@
 import React from 'react'
 import Header from '../../components/Header'
 import { Container } from 'react-bootstrap'
-
 import ShortenerService from '../../services/shortenerService'
-
 import { parseISO, formatRelative } from 'date-fns'
 import prBR from 'date-fns/locale/pt-BR'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { StatsContainer, StatsRow, StatsBox, StatsBoxTitle } from './styles'
 
@@ -41,7 +38,7 @@ class StatsPage extends React.Component {
     } catch (error) {
       this.setState({
         isLoading: false,
-        errorMessage: 'Ops... A url solicitada não existe!',
+        errorMessage: 'Ops... A url solicitada não existe!!',
       })
     }
   }
