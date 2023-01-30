@@ -2,8 +2,8 @@ import React from 'react'
 import Header from '../../components/Header'
 import { Container } from 'react-bootstrap'
 import ShortenerService from '../../services/shortenerService'
-import { parseISO, formatRelative } from 'date-fns'
-import prBR from 'date-fns/locale/pt-BR'
+// import { parseISO, formatRelative } from 'date-fns'
+// import ptBR from 'date-fns/locale/pt-BR'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { StatsContainer, StatsRow, StatsBox, StatsBoxTitle } from './styles'
 
@@ -25,14 +25,14 @@ class StatsPage extends React.Component {
       const service = new ShortenerService()
       const shortenedURL = await service.getStats(code)
 
+      /*
       const parseDate = parseISO(shortenedURL.updateAt)
       const currentDate = new Date()
-
       const relativeDate = formatRelative(parseDate, currentDate, {
-        locale: prBR,
+        locale: ptBR,
       })
-
-      shortenedURL.relativeDate = relativeDate
+      shortenedURL.relativeDate = relativeDate 
+      */
 
       this.setState({ isLoading: false, shortenedURL })
     } catch (error) {
@@ -45,6 +45,7 @@ class StatsPage extends React.Component {
 
   render() {
     const { errorMessage, shortenedURL } = this.state
+
     return (
       <Container>
         <Header>Estatísticas:</Header>
@@ -67,6 +68,7 @@ class StatsPage extends React.Component {
             </p>
             <p>
               Redireciona para:
+              <br />
               {shortenedURL.url}
             </p>
             <StatsRow>

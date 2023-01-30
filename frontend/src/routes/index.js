@@ -10,10 +10,10 @@ function MyRoutes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={HomePage} exact />
-        <Route path="/:code" component={RedirectPage} exact />
-        <Route path="/:code/stats" component={StatsPage} exact />
-        <Route path="/*" component={NotFoudPage} exact />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/:code" component={RedirectPage} />
+        <Route exact path="/:code/stats" component={StatsPage} />
+        <Route exact path="/*" component={NotFoudPage} />
       </Switch>
     </BrowserRouter>
   )
