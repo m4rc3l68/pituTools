@@ -25,20 +25,18 @@ class StatsPage extends React.Component {
       const service = new ShortenerService()
       const shortenedURL = await service.getStats(code)
 
-      /*
-      const parseDate = parseISO(shortenedURL.updateAt)
+      /* const parseDate = parseISO(shortenedURL.updateAt)
       const currentDate = new Date()
       const relativeDate = formatRelative(parseDate, currentDate, {
         locale: ptBR,
       })
-      shortenedURL.relativeDate = relativeDate 
-      */
-
+      shortenedURL.relativeDate = relativeDate
+ */
       this.setState({ isLoading: false, shortenedURL })
     } catch (error) {
       this.setState({
         isLoading: false,
-        errorMessage: 'Ops... A url solicitada não existe!!',
+        errorMessage: 'Ops... A URL solicitada não existe!!',
       })
     }
   }
