@@ -56,8 +56,6 @@ class HomePage extends React.Component {
   copyToClipboard = () => {
     const element = this.inputURL
     element.select()
-
-    alert('Copiado com sucesso!')
   }
 
   render() {
@@ -104,7 +102,7 @@ class HomePage extends React.Component {
                     </CopyToClipboard>
 
                     {this.state.copied ? (
-                      <span style={{ color: 'red' }}>Copiado!</span>
+                      <Button variant="outline-danger m-.5">Copiado</Button>
                     ) : null}
                   </InputGroup>
                   <p>

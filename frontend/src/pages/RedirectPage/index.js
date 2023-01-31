@@ -27,7 +27,7 @@ class RedirectPage extends React.Component {
     } catch (error) {
       this.setState({
         isLoading: false,
-        errorMenssage: 'Ops! A url solicitada não existe!!!!!',
+        errorMenssage: 'Ops! A url solicitada não existe',
       })
     }
   }

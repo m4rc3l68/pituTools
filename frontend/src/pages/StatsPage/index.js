@@ -27,11 +27,11 @@ class StatsPage extends React.Component {
 
       /* const parseDate = parseISO(shortenedURL.updateAt)
       const currentDate = new Date()
-      const relativeDate = formatRelative(parseDate, currentDate, {
+      const relativeDate = formatRelative(currentDate, parseDate, {
         locale: ptBR,
       })
-      shortenedURL.relativeDate = relativeDate
- */
+      shortenedURL.relativeDate = relativeDate */
+
       this.setState({ isLoading: false, shortenedURL })
     } catch (error) {
       this.setState({
