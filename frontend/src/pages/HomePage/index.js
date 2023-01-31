@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react'
 import Header from '../../components/Header'
-// import element from 'react-copy-to-clipboard'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import {
   Container,
   InputGroup,
@@ -22,6 +22,7 @@ class HomePage extends React.Component {
       url: '',
       code: '',
       errorMenssage: '',
+      copied: false,
     }
   }
 
@@ -56,7 +57,7 @@ class HomePage extends React.Component {
     const element = this.inputURL
     element.select()
 
-    navigator.clipboard.writeText(element.value)
+    alert('Copiado com sucesso!')
   }
 
   render() {
@@ -90,12 +91,21 @@ class HomePage extends React.Component {
                       ref={(input) => (this.inputURL = input)}
                     />
 
-                    <Button
-                      variant="outline-success"
-                      onClick={() => copyToClipboard()}
+                    <CopyToClipboard
+                      text={this.state.inputURL}
+                      onCopy={() => this.setState({ copied: true })}
                     >
-                      Copiar
-                    </Button>
+                      <Button
+                        variant="outline-success"
+                        onClick={() => this.copyToClipboard()}
+                      >
+                        Copiar
+                      </Button>
+                    </CopyToClipboard>
+
+                    {this.state.copied ? (
+                      <span style={{ color: 'red' }}>Copiado!</span>
+                    ) : null}
                   </InputGroup>
                   <p>
                     Para acompanhar as estatísticas, acesse:
@@ -110,7 +120,7 @@ class HomePage extends React.Component {
         </ContentContainer>
 
         <ContentContainer>
-          <AdsBlock>Adense</AdsBlock>
+          <AdsBlock>Adsense</AdsBlock>
         </ContentContainer>
       </Container>
     )
