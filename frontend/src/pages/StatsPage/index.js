@@ -25,12 +25,12 @@ class StatsPage extends React.Component {
       const service = new ShortenerService()
       const shortenedURL = await service.getStats(code)
 
-      // const parseDate = parseISO(shortenedURL.updateAt)
-      // const currentDate = new Date()
-      // const relativeDate = formatRelative(currentDate, parseDate, {
-      //   locale: ptBR,
-      // })
-      // shortenedURL.relativeDate = relativeDate
+      /*       const parseDate = parseISO(shortenedURL.updateAt)
+      const currentDate = new Date()
+      const relativeDate = formatRelative(currentDate, parseDate, {
+        locale: ptBR,
+      })
+      shortenedURL.relativeDate = relativeDate */
 
       this.setState({ isLoading: false, shortenedURL })
     } catch (error) {
@@ -56,7 +56,7 @@ class StatsPage extends React.Component {
             />
             <p className="m-3">{errorMessage}</p>
             <a className="btn btn-primary" href="/">
-              Encurtar nova URL ##StatsPage
+              Encurtar nova URL #StatsPage#
             </a>
           </StatsContainer>
         ) : (
@@ -79,8 +79,8 @@ class StatsPage extends React.Component {
                 <StatsBoxTitle>Última visita</StatsBoxTitle>
               </StatsBox>
             </StatsRow>
-            <a className="btn btn-primary mt-3" href="/">
-              Encurtar nova URL #StatsPage
+            <a className="btn btn-primary mt-2" href="/">
+              Encurtar nova URL Stats!!Page
             </a>
           </StatsContainer>
         )}
