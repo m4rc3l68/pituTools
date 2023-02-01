@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 export const StatsContainer = styled.div`
   display: block;
+  padding: 1rem;
+  border: solid 1px #ccc;
+  border-radius: 0.25rem;
 `
 
 export const StatsRow = styled.div`
@@ -9,6 +12,9 @@ export const StatsRow = styled.div`
   flex-wrap: wrap;
   justify-content: center !important;
   margin-bottom: 0.5rem;
+  padding: 1rem;
+  border: solid 1px #ccc;
+  border-radius: 0.25rem;
 `
 
 export const StatsBox = styled.div`
@@ -23,6 +29,6 @@ export const StatsBox = styled.div`
 
 export const StatsBoxTitle = styled.div`
   font-weight: 500;
-  padding: 0.25rem;
+  padding: 0.5rem;
   display: block;
 `

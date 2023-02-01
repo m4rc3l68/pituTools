@@ -49,7 +49,7 @@ class RedirectPage extends React.Component {
               />
               <p className="m-3">{errorMessage}</p>
               <a className="btn btn-primary" href="/">
-                Encurtar nova URL
+                Encurtar nova URL #RedirectPage
               </a>
             </StatsContainer>
           </>
