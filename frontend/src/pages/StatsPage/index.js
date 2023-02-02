@@ -2,8 +2,8 @@ import React from 'react'
 import Header from '../../components/Header'
 import { Container } from 'react-bootstrap'
 import ShortenerService from '../../services/shortenerService'
-// import { parseISO, formatRelative } from 'date-fns'
-// import ptBR from 'date-fns/locale/pt-BR'
+import { parseISO, formatRelative } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { StatsContainer, StatsRow, StatsBox, StatsBoxTitle } from './styles'
 
@@ -24,13 +24,12 @@ class StatsPage extends React.Component {
     try {
       const service = new ShortenerService()
       const shortenedURL = await service.getStats(code)
-
-      /*       const parseDate = parseISO(shortenedURL.updateAt)
+      const parsedDate = parseISO(shortenedURL.updatedAt)
       const currentDate = new Date()
-      const relativeDate = formatRelative(currentDate, parseDate, {
+      const relativeDate = formatRelative(parsedDate, currentDate, {
         locale: ptBR,
       })
-      shortenedURL.relativeDate = relativeDate */
+      shortenedURL.relativeDate = relativeDate
 
       this.setState({ isLoading: false, shortenedURL })
     } catch (error) {
@@ -56,7 +55,7 @@ class StatsPage extends React.Component {
             />
             <p className="m-3">{errorMessage}</p>
             <a className="btn btn-primary" href="/">
-              Encurtar nova URL #StatsPage#
+              Encurtar nova URL StatsPage
             </a>
           </StatsContainer>
         ) : (
@@ -80,7 +79,7 @@ class StatsPage extends React.Component {
               </StatsBox>
             </StatsRow>
             <a className="btn btn-primary mt-2" href="/">
-              Encurtar nova URL Stats!!Page
+              Encurtar nova URL StatsPage
             </a>
           </StatsContainer>
         )}

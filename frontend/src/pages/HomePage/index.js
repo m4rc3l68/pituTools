@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React from 'react'
 import Header from '../../components/Header'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
